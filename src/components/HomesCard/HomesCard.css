@@ -1,0 +1,47 @@
+.card {
+    --colums-size: 25%;
+    box-sizing: border-box;
+    padding: 8px;
+    flex: var(--colums-size);
+}
+
+.card__title {
+    display: block;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.card__image {
+    margin-bottom: 24px;
+    position: relative;
+    padding-bottom: 100%;
+}
+
+.card__image svg {
+    display: block;
+}
+
+.card__image img {
+    position: absolute;
+    display: block;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.card__location {
+    display: block;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.homes__card__title {
+    color: #3077c6;
+    margin-bottom: 24px;
+}
+
+.homes__card__location {
+    color: #bfbfbf;
+}

@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+}
+
+
+
+.homes {
+    background-color: #eaf0f9;
+}
+
+.homes__wrapper {
+    padding-bottom: 122px;
+}
+
+.homes__container {
+    align-items: center;
+}
+
+.homes__heading {
+    padding: 0;
+}
+
+.homes__cards-row {
+    position: relative;
+    margin-bottom: 6px;
+}
+
