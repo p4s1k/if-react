@@ -1,0 +1,80 @@
+.header {
+  padding: 12px 0;
+  margin-bottom: 196px;
+}
+
+.header__panel {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__button_logo {
+  width: 205px;
+  height: 40px;
+  fill: #3077c6;
+}
+
+.header__menu-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 48px;
+}
+
+.menu-list {
+  list-style: none;
+  font-weight: 400;
+  font-size: 24px;
+  color: #ffffff;
+}
+
+.header__menu-list {
+  display: flex;
+  padding-top: 5px;
+  gap: 24px;
+}
+
+.header__menu-list a {
+  text-decoration: inherit;
+  color: inherit;
+}
+
+.header__menu-list li {
+  position: relative;
+}
+
+.header__menu-list li:after {
+  --width: 50px;
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: calc(50% - var(--width) / 2);
+  width: var(--width);
+  height: 4px;
+  background: #f5bd41;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.header__menu-list li:hover:after {
+  opacity: 1;
+}
+
+.header__menu-icons {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.header__button_theme {
+  width: 30px;
+  height: 30px;
+}
+
+.header__button_profile {
+  width: 40px;
+  height: 40px;
+}
+
+.header__button_burger {
+  display: none;
+}

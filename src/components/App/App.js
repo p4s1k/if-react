@@ -1,29 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
+
+import { TopSection } from "../TopSection";
+import { Homes } from "../Homes";
 
 import "./App.css";
-
-import { Wrapper } from "../Wrapper";
-import { CardsRow } from "../Cards-row";
-import { Heading } from "../Heading";
-import { Container } from "../Container";
-import { HomesCard } from "../HomesCard";
-
-import { data } from "./data";
-
-const getHomesCardsList = (list) =>
-  list.map((el) => <HomesCard key={el.id} card={el}></HomesCard>);
+import { Sprite } from "../Sprite";
+import { AvailableHotels } from "../AvailableHotels";
 
 export const App = () => {
+  const [searchResult, setSearchResult] = useState([]);
+
   return (
-    <section className="homes">
-      <Wrapper className={"homes__wrapper"}>
-        <Container className="homes__container">
-          <Heading className={"homes__heading"}>Homes guests loves</Heading>
-          <CardsRow className={"homes__cards-row"}>
-            {getHomesCardsList(data)}
-          </CardsRow>
-        </Container>
-      </Wrapper>
-    </section>
+    <>
+      <>
+        <TopSection
+          setSearchResult={setSearchResult}
+        />
+          {!!searchResult.length && <AvailableHotels searchResult={searchResult}/>}
+      </>
+      <Homes />
+      <Sprite />
+    </>
   );
 };

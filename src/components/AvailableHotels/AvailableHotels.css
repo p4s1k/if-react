@@ -1,0 +1,16 @@
+.available__cards-row {
+  justify-content: space-around;
+}
+
+.available__card {
+  flex-grow: 0;
+}
+
+.available__card__title {
+  color: #3077c6;
+  margin-bottom: 24px;
+}
+
+.available__card__location {
+  color: #bfbfbf;
+}
