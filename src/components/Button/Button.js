@@ -1,9 +1,8 @@
-import React from 'react';
+import React from "react";
 import classNames from "classnames";
 
-import "./Button.css"
+import "./Button.css";
 
-export const Button = ({children, className}) =>
-    (
-        <button className={classNames("button", className)}>{children}</button>
-    );
+export const Button = ({ children, className }) => (
+  <button className={classNames("button", className)}>{children}</button>
+);

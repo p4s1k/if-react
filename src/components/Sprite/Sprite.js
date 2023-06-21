@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./Sprite.css"
+import "./Sprite.css";
 
 export const Sprite = () => (
   <svg className="sprite" xmlns="http://www.w3.org/2000/svg">
@@ -179,7 +179,7 @@ export const Sprite = () => (
       <path
         d="M0.941176 19.8235L7.1 11.6118C7.63333 10.9007 7.63333 9.92288 7.1 9.21177L0.941176 1"
         stroke="#383838"
-        stroke-width="2"
+        strokeWidth="2"
       />
     </symbol>
 
@@ -192,7 +192,7 @@ export const Sprite = () => (
       <path
         d="M1.05882 14.1766L5.1 8.78836C5.63333 8.07725 5.63333 7.09947 5.1 6.38836L1.05882 1.00012"
         stroke="#383838"
-        stroke-width="2"
+        strokeWidth="2"
       />
     </symbol>
 
@@ -208,7 +208,7 @@ export const Sprite = () => (
     </symbol>
 
     <symbol id="close-icon" viewBox="0 0 26 26" fill="none">
-      <g clip-path="url(#clip0_0_258)">
+      <g clipPath="url(#clip0_0_258)">
         <path
           d="M26 1.4857L24.5144 0L13 11.5143L1.4857 0L0 1.4857L11.5143 13L0 24.5144L1.4857 26L13 14.4857L24.5144 26L26 24.5144L14.4857 13L26 1.4857Z"
           fill="#BFBFBF"

@@ -1,20 +1,20 @@
-import React, { useRef } from "react";
+import React, { useState } from "react";
 import { search } from "./search";
 
 import "./SearchForm.css";
 
 const SearchForm = ({ setSearchResult }) => {
-  const textInput = useRef(null);
+  const [value, setValue] = useState("");
 
-  const trySearch = (event) => {
-    if (event.type === "keypress") {
+  const searchHotels = (event) => {
+    if (event.type === "keydown") {
       if (event.key !== "Enter") {
         return;
       }
     }
 
-    if (textInput.current.value) {
-      const searchResult = search(textInput.current.value);
+    if (value) {
+      const searchResult = search(value);
 
       if (searchResult.length === 0) {
         alert("NOTHING FOUND");
@@ -25,7 +25,7 @@ const SearchForm = ({ setSearchResult }) => {
       alert("EMPTY VALUE");
     }
 
-    textInput.current.value = "";
+    setValue("");
   };
 
   return (
@@ -42,8 +42,9 @@ const SearchForm = ({ setSearchResult }) => {
               id="name"
               type="text"
               placeholder="New York"
-              ref={textInput}
-              onKeyPress={(event) => trySearch(event)}
+              value={value}
+              onKeyDown={(event) => searchHotels(event)}
+              onChange={(event) => setValue(event.target.value)}
             />
           </div>
         </div>
@@ -99,7 +100,7 @@ const SearchForm = ({ setSearchResult }) => {
           <button
             className="search-form__item-button"
             type="button"
-            onClick={(event) => trySearch(event)}
+            onClick={(event) => searchHotels(event)}
           >
             Search
           </button>
