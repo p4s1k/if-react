@@ -1,0 +1,16 @@
+.top-selection__downloads {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.top-selection__button_android {
+    width: 135px;
+    height: 40px;
+}
+
+.top-selection__button_apple {
+    width: 120px;
+    height: 40px;
+}
+
