@@ -17,7 +17,7 @@
   --colums-size: 25%;
   box-sizing: border-box;
   padding: 8px;
-  flex: var(--colums-size);
+  flex-basis: var(--colums-size);
 }
 
 .card__image {

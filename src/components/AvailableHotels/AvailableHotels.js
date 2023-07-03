@@ -1,6 +1,7 @@
 import React from "react";
 
 import "./AvailableHotels.css";
+
 import { Wrapper } from "../Wrapper";
 import { Heading } from "../Heading";
 

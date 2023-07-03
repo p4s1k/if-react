@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
 import { TopSection } from "../TopSection";
-import { Homes } from "../Homes";
+import { HomesClass } from "../HomesClass";
+import { AvailableHotelsClass } from "../AvailableHotelsClass";
 
 import "./App.css";
 import { Sprite } from "../Sprite";
-import { AvailableHotels } from "../AvailableHotels";
 
 export const App = () => {
   const [searchResult, setSearchResult] = useState([]);
@@ -13,12 +13,12 @@ export const App = () => {
   return (
     <>
       <>
-        <TopSection
-          setSearchResult={setSearchResult}
-        />
-          {!!searchResult.length && <AvailableHotels searchResult={searchResult}/>}
+        <TopSection setSearchResult={setSearchResult} />
+        {!!searchResult.length && (
+          <AvailableHotelsClass searchResult={searchResult} />
+        )}
       </>
-      <Homes />
+      <HomesClass />
       <Sprite />
     </>
   );

@@ -7,9 +7,9 @@ export const search = (searchQuery) => {
     for (let property in destination) {
       if (property !== "id" && property !== "imageUrl") {
         if (
-          destination[property]
-            .toLowerCase()
-            .includes(searchQuery.toLowerCase())
+            destination[property]
+                .toLowerCase()
+                .includes(searchQuery.toLowerCase())
         ) {
           founded.push(destination);
           break;
