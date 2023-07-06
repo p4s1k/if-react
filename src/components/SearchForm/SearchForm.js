@@ -1,31 +1,33 @@
-import React, { useState } from "react";
-import { search } from "./search";
+import React, { useContext, useState } from "react";
+import { search } from "../../services/search";
 
 import "./SearchForm.css";
+import { SearchContext } from "../../contexts/SearchContext";
 
-const SearchForm = ({ setSearchResult }) => {
-  const [value, setValue] = useState("");
+const SearchForm = () => {
+  const [inputValue, setInputValue] = useState("");
+  const { setContextHotels } = useContext(SearchContext);
 
-  const searchHotels = (event) => {
+  const searchHotels = async (event) => {
     if (event.type === "keydown") {
       if (event.key !== "Enter") {
         return;
       }
     }
 
-    if (value) {
-      const searchResult = search(value);
+    if (inputValue) {
+      const searchResult = await search(inputValue);
 
       if (searchResult.length === 0) {
         alert("NOTHING FOUND");
       }
 
-      setSearchResult(searchResult);
+      setContextHotels(searchResult);
     } else {
       alert("EMPTY VALUE");
     }
 
-    setValue("");
+    setInputValue("");
   };
 
   return (
@@ -42,9 +44,9 @@ const SearchForm = ({ setSearchResult }) => {
               id="name"
               type="text"
               placeholder="New York"
-              value={value}
+              value={inputValue}
               onKeyDown={(event) => searchHotels(event)}
-              onChange={(event) => setValue(event.target.value)}
+              onChange={(event) => setInputValue(event.target.value)}
             />
           </div>
         </div>

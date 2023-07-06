@@ -1,4 +1,4 @@
-import {apiUrl} from "../constants";
+import { apiUrl } from "../constants";
 
 export const search = async (searchRequest) => {
   apiUrl.searchParams.set("search", searchRequest);
