@@ -1,12 +1,12 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { search } from "../../services/search";
 
 import "./SearchForm.css";
-import { SearchContext } from "../../contexts/SearchContext";
+import { useSearchContext } from "../../contexts/SearchContext";
 
 const SearchForm = () => {
   const [inputValue, setInputValue] = useState("");
-  const { setContextHotels } = useContext(SearchContext);
+  const { setContextHotels } = useSearchContext();
 
   const searchHotels = async (event) => {
     if (event.type === "keydown") {

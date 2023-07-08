@@ -1,13 +1,13 @@
-import React, { useContext } from "react";
+import React from "react";
 
 import "./AvailableHotels.css";
 
 import { Wrapper } from "../Wrapper";
 import { Heading } from "../Heading";
-import { SearchContext } from "../../contexts/SearchContext";
+import { useSearchContext } from "../../contexts/SearchContext";
 
 export const AvailableHotels = () => {
-  const { contextHotels } = useContext(SearchContext);
+  const { contextHotels } = useSearchContext();
 
   if (!contextHotels) {
     return;
