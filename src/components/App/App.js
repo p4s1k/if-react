@@ -1,24 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { TopSection } from "../TopSection";
-import { HomesClass } from "../HomesClass";
-import { AvailableHotelsClass } from "../AvailableHotelsClass";
+import { Homes } from "../Homes";
 
 import "./App.css";
 import { Sprite } from "../Sprite";
+import { AvailableHotels } from "../AvailableHotels";
+import { SearchContextProvider } from "../../contexts/SearchContext";
 
 export const App = () => {
-  const [searchResult, setSearchResult] = useState([]);
-
   return (
     <>
-      <>
-        <TopSection setSearchResult={setSearchResult} />
-        {!!searchResult.length && (
-          <AvailableHotelsClass searchResult={searchResult} />
-        )}
-      </>
-      <HomesClass />
+      <SearchContextProvider>
+        <TopSection />
+        <AvailableHotels />
+      </SearchContextProvider>
+      <Homes />
       <Sprite />
     </>
   );

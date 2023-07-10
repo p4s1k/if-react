@@ -3,10 +3,10 @@ import { Wrapper } from "../Wrapper";
 
 import "./TopSection.css";
 import { Header } from "../Header";
-import { SearchFormClass } from "../SearchFormClass";
 import { DownloadsBlock } from "../DownloandsBlock";
+import SearchForm from "../SearchForm/SearchForm";
 
-export const TopSection = ({ setSearchResult }) => {
+export const TopSection = () => {
   return (
     <div className="top-selection">
       <Wrapper className="top-selection__wrapper">
@@ -17,7 +17,7 @@ export const TopSection = ({ setSearchResult }) => {
             <br />
             to live, work or just relax
           </h1>
-          <SearchFormClass setSearchResult={setSearchResult} />
+          <SearchForm />
           <DownloadsBlock />
         </section>
       </Wrapper>

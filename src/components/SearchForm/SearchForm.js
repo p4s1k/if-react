@@ -1,31 +1,34 @@
 import React, { useState } from "react";
-import { search } from "./search";
+import { search } from "../../services/search";
 
 import "./SearchForm.css";
+import { useSearchContext } from "../../contexts/SearchContext";
+import { Calendar } from "../Calendar";
 
-const SearchForm = ({ setSearchResult }) => {
-  const [value, setValue] = useState("");
+const SearchForm = () => {
+  const [inputValue, setInputValue] = useState("");
+  const { setContextHotels } = useSearchContext();
 
-  const searchHotels = (event) => {
+  const searchHotels = async (event) => {
     if (event.type === "keydown") {
       if (event.key !== "Enter") {
         return;
       }
     }
 
-    if (value) {
-      const searchResult = search(value);
+    if (inputValue) {
+      const searchResult = await search(inputValue);
 
       if (searchResult.length === 0) {
         alert("NOTHING FOUND");
       }
 
-      setSearchResult(searchResult);
+      setContextHotels(searchResult);
     } else {
       alert("EMPTY VALUE");
     }
 
-    setValue("");
+    setInputValue("");
   };
 
   return (
@@ -42,20 +45,16 @@ const SearchForm = ({ setSearchResult }) => {
               id="name"
               type="text"
               placeholder="New York"
-              value={value}
+              value={inputValue}
               onKeyDown={(event) => searchHotels(event)}
-              onChange={(event) => setValue(event.target.value)}
+              onChange={(event) => setInputValue(event.target.value)}
             />
           </div>
         </div>
         <div className="container search-form__item-date-container">
-          <label htmlFor="date-in">Check-in — Check-out</label>
+          <label htmlFor="calendar">Check-in — Check-out</label>
           <div className="input-block__date input-block">
-            <input
-              className="search-form__check-date"
-              id="date-in"
-              type="date"
-            />
+            <Calendar />
           </div>
           <div className="search-form__check-date_mobile">
             <label htmlFor="in">Check-in date</label>
