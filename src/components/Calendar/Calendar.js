@@ -4,16 +4,20 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 export const Calendar = () => {
-  const [startDate, setStartDate] = useState(new Date());
+  const [dateRange, setDateRange] = useState([null, null]);
+  const [startDate, endDate] = dateRange;
   return (
     <>
       <DatePicker
-        selected={startDate}
-        onChange={(date) => setStartDate(date)}
-      />
-      <DatePicker
-        selected={startDate}
-        onChange={(date) => setStartDate(date)}
+        id={"calendar"}
+        selectsRange={true}
+        startDate={startDate}
+        endDate={endDate}
+        onChange={(update) => {
+          setDateRange(update);
+        }}
+        monthsShown={2}
+        placeholderText={"Check-in — Check-out"}
       />
     </>
   );

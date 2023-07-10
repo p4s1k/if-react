@@ -38,6 +38,15 @@
   background: #ffffff;
 }
 
+.input-block__date {
+  max-width: 259px;
+}
+
+.input-block__date input {
+  width: 100%;
+  border: 1px solid #cecece;
+}
+
 .input-block_name {
   border-radius: 8px 0 0 8px;
 }
@@ -52,11 +61,6 @@
   border: 0;
 }
 
-.search-form__item-date-container {
-  min-width: 259px;
-  flex-grow: 1;
-}
-
 .search-form__check-date {
   width: 100%;
   border: 1px solid #cecece;
@@ -69,7 +73,7 @@
 .input-block_filter {
   display: flex;
   justify-content: flex-end;
-  min-width: 314px;
+  /*min-width: 314px;*/
   flex-grow: 1;
 }
 
