@@ -5,6 +5,7 @@ import { useClickOutside } from "../../hooks/useClickOutside";
 import "./FilterForm.css";
 import { FilterFormCounter } from "../FilterFormCounter";
 import { useFilterContext } from "../../contexts/FilterContext";
+import { ChildrenAgeBlock } from "../ChildrenAgeBlock";
 
 export const FilterForm = () => {
   const [isOpened, setIsOpened] = useState(false);
@@ -78,9 +79,7 @@ export const FilterForm = () => {
               <div className="dropdown__child-age-title">
                 What is the age of the child you’re travelling with?
               </div>
-              <div className="dropdown__child-age-select-container">
-                {/*TODO: селекты относительно количества Children*/}
-              </div>
+              <ChildrenAgeBlock />
             </div>
           )}
         </div>

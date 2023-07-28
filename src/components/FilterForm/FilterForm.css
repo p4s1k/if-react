@@ -1,7 +1,6 @@
 .input-block_filter {
   display: flex;
   justify-content: flex-end;
-  /*min-width: 314px;*/
   flex-grow: 1;
 }
 
@@ -12,9 +11,9 @@
 }
 
 .item-filter__dropdown {
+  z-index: 1;
   box-sizing: border-box;
   position: absolute;
-  /*display: none;*/
   max-width: 260px;
   background-color: #ffffff;
   border-radius: 8px;
@@ -23,9 +22,8 @@
 }
 
 .item-filter__dropdown_active {
-    display: block;
+  display: block;
 }
-
 
 .dropdown__counter-container {
   display: flex;
