@@ -1,10 +1,10 @@
 import React from "react";
 
 import "./FilterFormCounter.css";
-import { useFilterContext } from "../../contexts/FilterContext";
+import { useSearchContext } from "../../contexts/SearchContext";
 
 export const FilterFormCounter = ({ counter }) => {
-  const { state } = useFilterContext();
+  const { state } = useSearchContext();
 
   const { name, min, max } = counter;
 

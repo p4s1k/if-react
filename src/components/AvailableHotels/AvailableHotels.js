@@ -7,18 +7,20 @@ import { Heading } from "../Heading";
 import { useSearchContext } from "../../contexts/SearchContext";
 
 export const AvailableHotels = () => {
-  const { contextHotels } = useSearchContext();
+  const { state } = useSearchContext();
 
-  if (!contextHotels) {
+  const { hotelsList } = state;
+
+  if (!hotelsList) {
     return;
   }
-  if (contextHotels.length !== 0) {
+  if (hotelsList.length !== 0) {
     return (
       <section className="available">
         <Wrapper>
           <Heading>Available Hotels</Heading>
           <div className="cards-row available__cards-row">
-            {contextHotels.map(({ id, name, city, country, imageUrl }) => (
+            {hotelsList.map(({ id, name, city, country, imageUrl }) => (
               <div className="card available__card" key={id}>
                 <div className="card__image">
                   <img src={imageUrl} alt="view" />

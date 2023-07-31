@@ -2,14 +2,13 @@ import React, { useState } from "react";
 import { search } from "../../services/search";
 
 import "./SearchForm.css";
-import { useSearchContext } from "../../contexts/SearchContext";
 import { Calendar } from "../Calendar";
 import { FilterForm } from "../FilterForm";
-import { FilterContextProvider } from "../../contexts/FilterContext";
+import { useSearchContext } from "../../contexts/SearchContext";
 
 const SearchForm = () => {
   const [inputValue, setInputValue] = useState("");
-  const { setContextHotels } = useSearchContext();
+  const { dispatch } = useSearchContext();
 
   const searchHotels = async (event) => {
     if (event.type === "keydown") {
@@ -25,7 +24,7 @@ const SearchForm = () => {
         alert("NOTHING FOUND");
       }
 
-      setContextHotels(searchResult);
+      dispatch({ type: "hotelsList", searchHotelsResult: searchResult });
     } else {
       alert("EMPTY VALUE");
     }
@@ -67,9 +66,7 @@ const SearchForm = () => {
             <input id="out" type="date" />
           </div>
         </div>
-        <FilterContextProvider>
-          <FilterForm />
-        </FilterContextProvider>
+        <FilterForm />
         <div className="input-block_button input-block">
           <button
             className="search-form__item-button"

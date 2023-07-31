@@ -1,8 +1,8 @@
 import React from "react";
-import { useFilterContext } from "../../contexts/FilterContext";
+import { useSearchContext } from "../../contexts/SearchContext";
 
 export const ChildrenAgeBlock = () => {
-  const { state, dispatch } = useFilterContext();
+  const { state, dispatch } = useSearchContext();
 
   const options = [];
 
