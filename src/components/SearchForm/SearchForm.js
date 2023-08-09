@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import { search } from "../../services/search";
 
 import "./SearchForm.css";
-import { useSearchContext } from "../../contexts/SearchContext";
 import { Calendar } from "../Calendar";
+import { FilterForm } from "../FilterForm";
+import { useSearchContext } from "../../contexts/SearchContext";
 
 const SearchForm = () => {
   const [inputValue, setInputValue] = useState("");
-  const { setContextHotels } = useSearchContext();
+  const { dispatch } = useSearchContext();
 
   const searchHotels = async (event) => {
     if (event.type === "keydown") {
@@ -23,7 +24,7 @@ const SearchForm = () => {
         alert("NOTHING FOUND");
       }
 
-      setContextHotels(searchResult);
+      dispatch({ type: "hotelsList", searchHotelsResult: searchResult });
     } else {
       alert("EMPTY VALUE");
     }
@@ -65,36 +66,7 @@ const SearchForm = () => {
             <input id="out" type="date" />
           </div>
         </div>
-        <div className="input-block_filter input-block">
-          <input
-            className="search-form__item-filter"
-            id="filter"
-            type="text"
-            readOnly="readonly"
-            placeholder="drop down panel coming soon"
-          />
-          <div className="item-filter__dropdown">
-            <div className="dropdown__counter-container"></div>
-            <div className="dropdown__child-age-container">
-              <div className="dropdown__child-age-title">
-                What is the age of the child you’re travelling with?
-              </div>
-              <div className="dropdown__child-age-select-container"></div>
-            </div>
-          </div>
-          <div className="search-form__adults">
-            <label htmlFor="adults">Adults</label>
-            <input id="adults" type="text" placeholder="2" />
-          </div>
-          <div className="search-form__children">
-            <label htmlFor="children">Children</label>
-            <input id="children" type="text" placeholder="0" />
-          </div>
-          <div className="search-form__rooms">
-            <label htmlFor="rooms">Rooms</label>
-            <input id="rooms" type="text" placeholder="1" />
-          </div>
-        </div>
+        <FilterForm />
         <div className="input-block_button input-block">
           <button
             className="search-form__item-button"

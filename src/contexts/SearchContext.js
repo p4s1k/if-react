@@ -1,12 +1,75 @@
-import { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useReducer } from "react";
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "incrementAdults":
+      return {
+        ...state,
+        countAdults: state.countAdults + 1,
+      };
+    case "decrementAdults":
+      return {
+        ...state,
+        countAdults: state.countAdults - 1,
+      };
+    case "incrementChildren":
+      return {
+        ...state,
+        countChildren: state.countChildren + 1,
+        childrenAge: [...state.childrenAge, 0],
+      };
+    case "decrementChildren":
+      return {
+        ...state,
+        countChildren: state.countChildren - 1,
+        childrenAge: state.childrenAge.filter(
+          (val, i, arr) => i !== arr.length - 1
+        ),
+      };
+    case "incrementRooms":
+      return {
+        ...state,
+        countRooms: state.countRooms + 1,
+      };
+    case "decrementRooms":
+      return {
+        ...state,
+        countRooms: state.countRooms - 1,
+      };
+    case "childrenAge":
+      return {
+        ...state,
+        childrenAge: state.childrenAge.map((el, index) => {
+          if (index === action.childrenAgeIndex) {
+            return action.childrenAgeValue;
+          } else {
+            return el;
+          }
+        }),
+      };
+    case "hotelsList":
+      return {
+        ...state,
+        hotelsList: [...action.searchHotelsResult],
+      };
+  }
+};
+
+const initialState = {
+  countAdults: 1,
+  countChildren: 0,
+  countRooms: 1,
+  childrenAge: [],
+  hotelsList: [],
+};
 
 export const SearchContext = createContext(null);
 
 export const SearchContextProvider = ({ children }) => {
-  const [contextHotels, setContextHotels] = useState([]);
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
-    <SearchContext.Provider value={{ contextHotels, setContextHotels }}>
+    <SearchContext.Provider value={{ state, dispatch }}>
       {children}
     </SearchContext.Provider>
   );
