@@ -1,20 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
 import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
+import { useSearchContext } from "../../contexts/SearchContext";
 
 export const Calendar = () => {
-  const [dateRange, setDateRange] = useState([null, null]);
-  const [startDate, endDate] = dateRange;
+  const { state, dispatch } = useSearchContext();
+  const { startDate, endDate } = state;
+
   return (
     <>
       <DatePicker
         id={"calendar"}
+        dateFormat="EEE, MMM dd"
         selectsRange={true}
         startDate={startDate}
         endDate={endDate}
         onChange={(update) => {
-          setDateRange(update);
+          dispatch({ type: "dateRange", dateRange: update });
         }}
         monthsShown={2}
         placeholderText={"Check-in — Check-out"}

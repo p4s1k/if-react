@@ -52,6 +52,16 @@ const reducer = (state, action) => {
         ...state,
         hotelsList: [...action.searchHotelsResult],
       };
+    case "startDate":
+      return { ...state, startDate: action.startDate };
+    case "endDate":
+      return { ...state, endDate: action.endDate };
+    case "dateRange":
+      return {
+        ...state,
+        startDate: action.dateRange[0],
+        endDate: action.dateRange[1],
+      };
   }
 };
 
@@ -61,6 +71,8 @@ const initialState = {
   countRooms: 1,
   childrenAge: [],
   hotelsList: [],
+  startDate: null,
+  endDate: null,
 };
 
 export const SearchContext = createContext(null);

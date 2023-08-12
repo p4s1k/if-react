@@ -5,6 +5,7 @@ import "./SearchForm.css";
 import { Calendar } from "../Calendar";
 import { FilterForm } from "../FilterForm";
 import { useSearchContext } from "../../contexts/SearchContext";
+import {MobileCalendar} from "../MobileCalendar";
 
 const SearchForm = () => {
   const [inputValue, setInputValue] = useState("");
@@ -45,7 +46,7 @@ const SearchForm = () => {
               className="search-form__item-name"
               id="name"
               type="text"
-              placeholder="New York"
+              placeholder="Enter a request..."
               value={inputValue}
               onKeyDown={(event) => searchHotels(event)}
               onChange={(event) => setInputValue(event.target.value)}
@@ -58,12 +59,12 @@ const SearchForm = () => {
             <Calendar />
           </div>
           <div className="search-form__check-date_mobile">
-            <label htmlFor="in">Check-in date</label>
-            <input id="in" type="date" />
+            <label htmlFor="startDate">Check-in date</label>
+            <MobileCalendar id={"startDate"} />
           </div>
           <div className="search-form__check-date_mobile">
-            <label htmlFor="out">Check-out date</label>
-            <input id="out" type="date" />
+            <label htmlFor="endDate">Check-out date</label>
+            <MobileCalendar id={"endDate"} />
           </div>
         </div>
         <FilterForm />

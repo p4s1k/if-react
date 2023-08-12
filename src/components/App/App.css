@@ -51,3 +51,624 @@
   font-size: 24px;
   line-height: 28px;
 }
+
+@media only screen and (max-width: 1296px) {
+  .input-block_name {
+    border-radius: 8px 0 0 0;
+  }
+
+  .input-block_filter {
+    border-radius: 0 8px 0 0;
+  }
+  .input-block_button {
+    border-radius: 0 0 8px 8px;
+  }
+
+  .search-form__item-button {
+    border-radius: 0 0 8px 8px;
+  }
+}
+
+@media only screen and (max-width: 1104px) {
+  .input-block__date {
+    border-radius: 0 8px 0 0;
+  }
+
+  .input-block_button {
+    border-radius: 0 8px 8px 0;
+  }
+
+  .input-block_filter {
+    border-radius: 0 0 0 8px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .card {
+    --colums-size: 50%;
+    padding: 8px;
+  }
+
+  .cards-row {
+    margin: -8px;
+  }
+
+  .input-block {
+    background: none;
+  }
+
+  .search-form__item-name-container {
+    min-width: 100%;
+  }
+
+  .search-form__item-date-container {
+    min-width: 100%;
+  }
+
+  .input-block__date {
+    max-width: initial;
+  }
+
+  .react-datepicker-wrapper {
+    display: initial;
+  }
+
+  .arrow-button_desktop {
+    display: none;
+  }
+
+  .arrow-button_tablet {
+    display: flex;
+  }
+
+  .destinations__cards-row {
+    flex-wrap: wrap;
+  }
+
+  .destinations__card {
+    flex: 50%;
+    margin-bottom: 16px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .wrapper {
+    padding: 40px 16px;
+  }
+
+  .top-selection__wrapper {
+    padding-top: 0;
+  }
+
+  .header {
+    padding: 12px 0;
+  }
+
+  .top-selection__container {
+    gap: 40px;
+  }
+
+  .header__button_logo {
+    width: 122px;
+    height: 24px;
+  }
+
+  .header__menu-row {
+    gap: 16px;
+  }
+
+  .header__button_theme {
+    width: 16px;
+    height: 16px;
+  }
+
+  .header__button_profile {
+    width: 24px;
+    height: 24px;
+  }
+
+  .header__button_burger {
+    display: inline-block;
+    width: 24px;
+    height: 16px;
+  }
+
+  .menu-list {
+    display: none;
+  }
+
+  .header__menu-icons {
+    gap: 16px;
+  }
+
+  .top-selection__heading {
+    font-size: 30px;
+    line-height: 35px;
+  }
+
+  .top-selection-content__container {
+    gap: 31px;
+  }
+
+  .top-selection__search-block-container {
+    gap: 32px;
+  }
+
+  .search-form {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: normal;
+    font-weight: 400;
+    font-size: 18px;
+    padding: 4px;
+    flex-direction: column;
+    background: #f5bd41;
+  }
+
+  .search-form input {
+    box-sizing: initial;
+    border-radius: initial;
+    height: initial;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    outline: none;
+    border: none;
+    width: 100%;
+    color: #383838;
+    padding: 0;
+  }
+
+  .search-form label {
+    color: initial;
+    margin: initial;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  .input-block {
+    margin: 4px;
+    min-height: 48px;
+    display: flex;
+    border-radius: 4px;
+  }
+
+  .search-form * {
+    box-sizing: border-box;
+  }
+
+  .search-form__item-name-container {
+    min-width: initial;
+    flex-grow: initial;
+  }
+
+  .search-form__item-name-container label {
+    display: none;
+  }
+
+  .input-block_name {
+    border-radius: 4px;
+    align-items: center;
+    padding: 0 12px;
+    background: #ffffff;
+  }
+
+  .input-block_name svg {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+  }
+
+  .search-form__item-date-container {
+    min-width: initial;
+    flex-grow: initial;
+    margin: 4px;
+    min-height: 48px;
+    flex-direction: row;
+    border-radius: 4px;
+    gap: 8px;
+  }
+
+  .search-form__item-date-container > label {
+    display: none;
+  }
+
+  .input-block__date {
+    display: none;
+  }
+
+  .search-form__check-date_mobile {
+    display: initial;
+    padding: 0 8px 4px;
+    border-radius: 4px;
+    flex-direction: column;
+    height: 100%;
+    background: #ffffff;
+    width: calc(50% - 4px);
+  }
+
+  /*.search-form__check-date_mobile {*/
+  /*  display: flex;*/
+  /*  padding: 0 8px 4px;*/
+  /*  border-radius: 4px;*/
+  /*  height: 100%;*/
+  /*  background: #ffffff;*/
+  /*  width: calc(50% - 4px);*/
+  /*}*/
+
+  .input-block_filter {
+    min-width: initial;
+    flex-grow: initial;
+    padding: 6px 8px;
+    border-radius: 4px;
+    background: #ffffff;
+  }
+
+  .search-form__adults {
+    display: flex;
+    flex-direction: column;
+    width: 33.333%;
+  }
+
+  .search-form__children {
+    display: flex;
+    flex-direction: column;
+    width: 33.333%;
+  }
+
+  .search-form__rooms {
+    display: flex;
+    flex-direction: column;
+    width: 33.333%;
+  }
+
+  .input-block_filter label {
+    margin-bottom: 4px;
+  }
+
+  .search-form__item-filter {
+    display: none;
+  }
+
+  .search-form__adults {
+    display: initial;
+    border-right: solid 1px #383838;
+  }
+
+  .search-form__children {
+    display: initial;
+    padding-left: 5px;
+  }
+
+  .search-form__rooms {
+    display: initial;
+    padding-left: 10px;
+    border-left: solid 1px #383838;
+  }
+
+  .input-block_button {
+    border-radius: initial;
+    min-width: initial;
+    flex: initial;
+  }
+
+  .search-form__item-button {
+    height: initial;
+    padding: initial;
+    line-height: initial;
+    border-radius: 4px;
+    width: 100%;
+    border: none;
+    font-weight: 500;
+    font-size: 19px;
+    color: #ffffff;
+    background: #3077c6;
+  }
+
+  .card__image {
+    margin-bottom: 24px;
+  }
+
+  .card__title {
+    font-size: 12px;
+    line-height: 14px;
+    margin-bottom: 4px;
+  }
+
+  .card__location {
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  .advantages__container {
+    margin-top: -16px;
+  }
+
+  .heading {
+    margin-bottom: 32px;
+    font-size: 28px;
+    line-height: 33px;
+  }
+
+  .advantages__heading-title:after {
+    display: none;
+  }
+
+  .advantages__cards-row {
+    margin: -16px 0;
+    justify-content: center;
+  }
+
+  .advantages__card__image {
+    margin-bottom: 16px;
+  }
+
+  .advantages__card__image svg {
+    width: 70px;
+    height: 70px;
+  }
+
+  .advantages__card__title {
+    margin: 0;
+    font-size: 15px;
+    line-height: 18px;
+  }
+
+  .advantages__card {
+    --colums-size: 100%;
+    padding: 16px 0;
+  }
+
+  .arrow-button_tablet {
+    display: none;
+  }
+
+  .arrow-button_mobile {
+    display: flex;
+    --size: 28px;
+  }
+
+  .arrow-button svg {
+    width: 7px;
+    height: 15px;
+  }
+
+  .card_not-mobile {
+    display: none;
+  }
+
+  .sign-up__wrapper {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  .sign-up__row {
+    align-items: center;
+    background-color: initial;
+  }
+
+  .sign-up__content {
+    margin-top: 0;
+  }
+
+  .sing-up__close-button {
+    order: -1;
+    margin: 0 16px 0 0;
+  }
+
+  .sign-up__close-button-icon {
+    --size: 16px;
+  }
+
+  .sign-up__icon-container {
+    --size: 58px;
+    background-color: #3077c6;
+    border-radius: 4px;
+    margin: 0 16px 0 0;
+  }
+
+  .sign-up__icon {
+    display: none;
+  }
+
+  .sign-up__icon_mobile {
+    fill: #ffffff;
+    display: initial;
+    width: 53px;
+    height: 11px;
+  }
+
+  .sign-up__heading {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    margin: 0 16px 0 0;
+  }
+
+  .sigh-up__confirm-button {
+    display: none;
+  }
+
+  .sigh-up__install-button {
+    display: initial;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #3077c6;
+  }
+
+  .destinations-wrapper__wrapper {
+    padding-bottom: 20px;
+  }
+
+  .destinations__category-panel {
+    margin-bottom: 24px;
+    gap: 16px;
+    background-color: initial;
+  }
+
+  .destination__category-button {
+    display: block;
+    flex: 100%;
+    padding: initial;
+    min-height: 32px;
+    font-size: 19px;
+    line-height: 22px;
+    border-radius: 4px;
+  }
+
+  .category-button__cities-button {
+    text-shadow: initial;
+    border: 1px solid #f3f3f4;
+    background-color: #ffffff;
+  }
+
+  .category-button__places-button {
+    display: none;
+  }
+
+  .category-button__places-button_mobile {
+    display: inline;
+    border: 1px solid #f3f3f4;
+    background-color: #ffffff;
+  }
+
+  .ordinal-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .reviews {
+    order: -1;
+    background-color: #eaf0f9;
+  }
+
+  .reviews__heading {
+    height: initial;
+  }
+
+  .reviews__card {
+    font-size: 15px;
+    line-height: 18px;
+  }
+
+  .reviews__card__image {
+    margin: 0;
+  }
+
+  .card__price {
+    display: none;
+  }
+
+  .card__body {
+    padding: 12px 0 0 0;
+  }
+
+  .card__top__text-container div {
+    font-size: 15px;
+    line-height: 18px;
+  }
+
+  .reviews__card__image img {
+    max-height: 325px;
+  }
+
+  .reviews__card__tittle {
+    margin: 0;
+  }
+
+  .card__top__text-container {
+    gap: 8px;
+  }
+
+  .card__top__rating-container {
+    gap: 4px;
+  }
+
+  .card__rating-grade {
+    width: 39px;
+    height: 26px;
+  }
+
+  .card__reviews-amount {
+    font-size: 12px;
+  }
+
+  .card__top {
+    margin-bottom: 11px;
+  }
+
+  .review__profile {
+    padding: 2px 4px 4px 4px;
+  }
+
+  .profile__name {
+    margin-bottom: 4px;
+  }
+
+  .profile__icon {
+    width: 44px;
+    height: 44px;
+    margin-right: 7px;
+  }
+
+  .review {
+    margin-bottom: 28px;
+  }
+
+  .card__navigation {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .card__navigation .navigation__circle {
+    box-sizing: border-box;
+    border-radius: 50%;
+    border: #333333 solid 1px;
+    width: 8px;
+    height: 8px;
+    color: #333333;
+  }
+
+  .navigation__circle:first-child {
+    border-width: 4px;
+  }
+
+  .footer__container {
+    gap: 0;
+  }
+
+  .footer__row {
+    margin: 0 auto;
+  }
+
+  .footer-list {
+    width: auto;
+    font-size: 15px;
+    line-height: 18px;
+    text-decoration: underline;
+    margin-bottom: 32px;
+  }
+
+  .footer-list__item {
+    display: none;
+  }
+
+  .footer__rights {
+    margin: 0 auto;
+    font-size: 12px;
+    line-height: 14px;
+    text-shadow: 0 4px 4px #000000, -1px 0 #000000, 0 1px #000000, 1px 0 #000000,
+      0 -1px #000000;
+  }
+}
+
+@media only screen and (min-width: 481px) {
+  .footer__logo {
+    display: none;
+  }
+}
