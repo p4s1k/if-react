@@ -53,7 +53,7 @@ const SearchForm = () => {
             />
           </div>
         </div>
-        <div className="container search-form__item-date-container">
+        <div className= "search-form__item-date-container">
           <label htmlFor="calendar">Check-in — Check-out</label>
           <div className="input-block__date input-block">
             <Calendar />

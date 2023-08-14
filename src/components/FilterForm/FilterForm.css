@@ -57,3 +57,86 @@
   background-color: #ffffff;
   font-size: 12px;
 }
+
+.search-form__adults {
+  display: none;
+}
+
+.search-form__children {
+  display: none;
+}
+
+.search-form__rooms {
+  display: none;
+}
+
+@media only screen and (max-width: 1296px) {
+  .input-block_filter {
+    border-radius: 0 8px 0 0;
+  }
+}
+
+@media only screen and (max-width: 1104px) {
+  .input-block_filter {
+    border-radius: 0 0 0 8px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .react-datepicker-wrapper {
+    display: initial;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .search-form__adults {
+    display: flex;
+    flex-direction: column;
+    width: 33.333%;
+  }
+
+  .search-form__children {
+    display: flex;
+    flex-direction: column;
+    width: 33.333%;
+  }
+
+  .search-form__rooms {
+    display: flex;
+    flex-direction: column;
+    width: 33.333%;
+  }
+
+  .input-block_filter {
+    min-width: initial;
+    flex-grow: initial;
+    padding: 6px 8px;
+    border-radius: 4px;
+    background: #ffffff;
+  }
+  .input-block_filter label {
+    margin-bottom: 4px;
+  }
+
+  .search-form__item-filter {
+    display: none;
+  }
+
+  .search-form__adults {
+    display: initial;
+    border-right: solid 1px #383838;
+  }
+
+  .search-form__children {
+    display: initial;
+    padding-left: 5px;
+  }
+
+  .search-form__rooms {
+    display: initial;
+    padding-left: 10px;
+    border-left: solid 1px #383838;
+  }
+
+
+}

@@ -57,8 +57,10 @@ export const FilterForm = () => {
   const { countAdults, countChildren, countRooms } = state;
 
   return (
-    <div ref={ref} className="input-block_filter input-block"
-         onClick={() => openCloseDropDawn()}
+    <div
+      ref={ref}
+      className="input-block_filter input-block"
+      onClick={() => openCloseDropDawn()}
     >
       <input
         className="search-form__item-filter"
@@ -68,8 +70,10 @@ export const FilterForm = () => {
         placeholder={`${adults.name} ${countAdults} - ${children.name} ${countChildren} - ${rooms.name} ${countRooms}`}
       />
       {isOpened && (
-        <div className="item-filter__dropdown"
-        onClick={(event)=>event.stopPropagation()}>
+        <div
+          className="item-filter__dropdown"
+          onClick={(event) => event.stopPropagation()}
+        >
           <div className="dropdown__counter-container">
             <FilterFormCounter counter={adults} />
             <FilterFormCounter counter={children} />
@@ -87,15 +91,21 @@ export const FilterForm = () => {
         </div>
       )}
       <div className="search-form__adults">
-        <label htmlFor="adults" onClick={event => event.stopPropagation()}>{adults.name}</label>
+        <label htmlFor="adults" onClick={(event) => event.stopPropagation()}>
+          {adults.name}
+        </label>
         <input id="adults" type="text" placeholder={countAdults} />
       </div>
       <div className="search-form__children">
-        <label htmlFor="children" onClick={event => event.stopPropagation()}>{children.name}</label>
+        <label htmlFor="children" onClick={(event) => event.stopPropagation()}>
+          {children.name}
+        </label>
         <input id="children" type="text" placeholder={countChildren} />
       </div>
       <div className="search-form__rooms">
-        <label htmlFor="rooms" onClick={event => event.stopPropagation()}>{rooms.name}</label>
+        <label htmlFor="rooms" onClick={(event) => event.stopPropagation()}>
+          {rooms.name}
+        </label>
         <input id="rooms" type="text" placeholder={countRooms} />
       </div>
     </div>

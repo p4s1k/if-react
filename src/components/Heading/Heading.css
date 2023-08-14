@@ -7,3 +7,12 @@
     text-align: center;
     position: relative;
 }
+
+@media only screen and (max-width: 480px) {
+    .heading {
+        margin-bottom: 32px;
+        font-size: 28px;
+        line-height: 33px;
+    }
+
+}

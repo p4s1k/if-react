@@ -78,3 +78,42 @@
 .header__button_burger {
   display: none;
 }
+
+@media only screen and (max-width: 480px) {
+  .header {
+    padding: 12px 0;
+  }
+
+  .header__button_logo {
+    width: 122px;
+    height: 24px;
+  }
+
+  .header__menu-row {
+    gap: 16px;
+  }
+
+  .header__button_theme {
+    width: 16px;
+    height: 16px;
+  }
+
+  .header__button_profile {
+    width: 24px;
+    height: 24px;
+  }
+
+  .header__button_burger {
+    display: inline-block;
+    width: 24px;
+    height: 16px;
+  }
+
+  .menu-list {
+    display: none;
+  }
+
+  .header__menu-icons {
+    gap: 16px;
+  }
+}
