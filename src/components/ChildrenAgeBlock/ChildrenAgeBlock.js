@@ -1,7 +1,7 @@
-import React from "react";
+import React, { memo } from "react";
 import { useSearchContext } from "../../contexts/SearchContext";
 
-export const ChildrenAgeBlock = () => {
+export const ChildrenAgeBlock = memo(({ childrenCount }) => {
   const { state, dispatch } = useSearchContext();
 
   const options = [];
@@ -33,4 +33,4 @@ export const ChildrenAgeBlock = () => {
       ))}
     </div>
   );
-};
+});

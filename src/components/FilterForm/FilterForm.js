@@ -75,7 +75,7 @@ export const FilterForm = () => {
           onClick={(event) => event.stopPropagation()}
         >
           <div className="dropdown__counter-container">
-            <FilterFormCounter counter={adults} />
+            <FilterFormCounter counter={adults}  />
             <FilterFormCounter counter={children} />
             <FilterFormCounter counter={rooms} />
           </div>
@@ -85,7 +85,7 @@ export const FilterForm = () => {
               <div className="dropdown__child-age-title">
                 What is the age of the child you’re travelling with?
               </div>
-              <ChildrenAgeBlock />
+              <ChildrenAgeBlock childrenCount={countChildren} />
             </div>
           )}
         </div>
