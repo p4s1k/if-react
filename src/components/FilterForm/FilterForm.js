@@ -1,18 +1,21 @@
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 
 import { useClickOutside } from "../../hooks/useClickOutside";
 
 import "./FilterForm.css";
 import { FilterFormCounter } from "../FilterFormCounter";
-import {useSearchContext, useSearchDispatchContext, useSearchStateContext} from "../../contexts/SearchStateContext";
+import {
+  useSearchDispatchContext,
+  useSearchStateContext,
+} from "../../contexts/SearchStateContext";
 import { ChildrenAgeBlock } from "../ChildrenAgeBlock";
 
-export const FilterForm = () => {
+export const FilterForm = memo(() => {
+  console.log("rend form");
   const [isOpened, setIsOpened] = useState(false);
 
-  // const { state, dispatch } = useSearchContext();
-  const state = useSearchStateContext()
-  const dispatch = useSearchDispatchContext()
+  const state = useSearchStateContext();
+  const dispatch = useSearchDispatchContext();
 
   const ref = useClickOutside(() => setIsOpened(false));
 
@@ -77,7 +80,7 @@ export const FilterForm = () => {
           onClick={(event) => event.stopPropagation()}
         >
           <div className="dropdown__counter-container">
-            <FilterFormCounter counter={adults}  />
+            <FilterFormCounter counter={adults} />
             <FilterFormCounter counter={children} />
             <FilterFormCounter counter={rooms} />
           </div>
@@ -87,7 +90,7 @@ export const FilterForm = () => {
               <div className="dropdown__child-age-title">
                 What is the age of the child you’re travelling with?
               </div>
-              <ChildrenAgeBlock childrenCount={countChildren} />
+              <ChildrenAgeBlock childrenAge={state.childrenAge} />
             </div>
           )}
         </div>
@@ -112,4 +115,4 @@ export const FilterForm = () => {
       </div>
     </div>
   );
-};
+});

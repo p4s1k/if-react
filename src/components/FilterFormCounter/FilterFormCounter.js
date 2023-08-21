@@ -1,10 +1,12 @@
-import React from "react";
+import React, { memo } from "react";
 
 import "./FilterFormCounter.css";
-import { useSearchContext } from "../../contexts/SearchStateContext";
+import {
+  useSearchStateContext,
+} from "../../contexts/SearchStateContext";
 
-export const FilterFormCounter = ({ counter }) => {
-  const { state } = useSearchContext();
+export const FilterFormCounter = memo(({ counter }) => {
+  const state = useSearchStateContext();
 
   const { name, min, max } = counter;
 
@@ -39,4 +41,4 @@ export const FilterFormCounter = ({ counter }) => {
       </div>
     </div>
   );
-};
+});

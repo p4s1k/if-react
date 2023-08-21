@@ -2,18 +2,11 @@ import React, { memo } from "react";
 import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
-import {
-  useSearchContext,
-  useSearchDispatchContext,
-  useSearchStateContext,
-} from "../../contexts/SearchStateContext";
+import { useSearchDispatchContext } from "../../contexts/SearchStateContext";
 
 export const Calendar = memo(({ startDate, endDate }) => {
-  // const { state, dispatch } = useSearchContext();
   console.log("rend cal");
-  // const { state } = useSearchStateContext();
   const dispatch = useSearchDispatchContext();
-  // const { startDate, endDate } = state;
 
   return (
     <>

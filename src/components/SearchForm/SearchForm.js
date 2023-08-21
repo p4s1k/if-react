@@ -5,8 +5,6 @@ import "./SearchForm.css";
 import { Calendar } from "../Calendar";
 import { FilterForm } from "../FilterForm";
 import {
-  SearchContextProvider,
-  SearchStateContext,
   useSearchDispatchContext,
   useSearchStateContext,
 } from "../../contexts/SearchStateContext";
@@ -14,7 +12,8 @@ import { MobileCalendar } from "../MobileCalendar";
 
 const SearchForm = () => {
   const [inputValue, setInputValue] = useState("");
-  const { dispatch } = useSearchDispatchContext();
+
+  const dispatch = useSearchDispatchContext();
   const { startDate, endDate } = useSearchStateContext();
 
   const searchHotels = async (event) => {

@@ -5,11 +5,10 @@ import {
   useSearchStateContext,
 } from "../../contexts/SearchStateContext";
 
-export const ChildrenAgeBlock = memo(() => {
-  // const { state, dispatch } = useSearchContext();
-
-  const { state } = useSearchStateContext();
+export const ChildrenAgeBlock = memo( ({childrenAge}) => {
+  // const state = useSearchStateContext();
   const dispatch = useSearchDispatchContext();
+  console.log("rend child")
 
   const options = [];
 
@@ -19,10 +18,10 @@ export const ChildrenAgeBlock = memo(() => {
 
   return (
     <div className="dropdown__child-age-select-container">
-      {state.childrenAge.map((value, index) => (
+      {childrenAge.map((value, index) => (
         <select
           key={index}
-          value={state.childrenAge[index]}
+          value={childrenAge[index]}
           onChange={(el) =>
             dispatch({
               type: "childrenAge",

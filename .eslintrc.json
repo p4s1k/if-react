@@ -21,7 +21,8 @@
   "rules": {
     "react/react-in-jsx-scope": "error",
     "react/jsx-uses-react": "error",
-    "react/prop-types": 0
+    "react/prop-types": 0,
+    "react/display-name": "off"
   },
   "ignorePatterns": [
     "src/img/castelmezzano.png",
