@@ -4,13 +4,15 @@ import { useClickOutside } from "../../hooks/useClickOutside";
 
 import "./FilterForm.css";
 import { FilterFormCounter } from "../FilterFormCounter";
-import { useSearchContext } from "../../contexts/SearchContext";
+import {useSearchContext, useSearchDispatchContext, useSearchStateContext} from "../../contexts/SearchStateContext";
 import { ChildrenAgeBlock } from "../ChildrenAgeBlock";
 
 export const FilterForm = () => {
   const [isOpened, setIsOpened] = useState(false);
 
-  const { state, dispatch } = useSearchContext();
+  // const { state, dispatch } = useSearchContext();
+  const state = useSearchStateContext()
+  const dispatch = useSearchDispatchContext()
 
   const ref = useClickOutside(() => setIsOpened(false));
 

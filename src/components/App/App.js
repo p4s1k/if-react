@@ -6,7 +6,7 @@ import { Homes } from "../Homes";
 import "./App.css";
 import { Sprite } from "../Sprite";
 import { AvailableHotels } from "../AvailableHotels";
-import { SearchContextProvider } from "../../contexts/SearchContext";
+import { SearchContextProvider } from "../../contexts/SearchStateContext";
 
 export const App = () => {
   return (

@@ -1,8 +1,15 @@
 import React, { memo } from "react";
-import { useSearchContext } from "../../contexts/SearchContext";
+import {
+  useSearchContext,
+  useSearchDispatchContext,
+  useSearchStateContext,
+} from "../../contexts/SearchStateContext";
 
-export const ChildrenAgeBlock = memo(({ childrenCount }) => {
-  const { state, dispatch } = useSearchContext();
+export const ChildrenAgeBlock = memo(() => {
+  // const { state, dispatch } = useSearchContext();
+
+  const { state } = useSearchStateContext();
+  const dispatch = useSearchDispatchContext();
 
   const options = [];
 

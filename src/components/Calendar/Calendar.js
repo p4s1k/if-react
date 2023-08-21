@@ -1,12 +1,19 @@
-import React from "react";
+import React, { memo } from "react";
 import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
-import { useSearchContext } from "../../contexts/SearchContext";
+import {
+  useSearchContext,
+  useSearchDispatchContext,
+  useSearchStateContext,
+} from "../../contexts/SearchStateContext";
 
-export const Calendar = () => {
-  const { state, dispatch } = useSearchContext();
-  const { startDate, endDate } = state;
+export const Calendar = memo(({ startDate, endDate }) => {
+  // const { state, dispatch } = useSearchContext();
+  console.log("rend cal");
+  // const { state } = useSearchStateContext();
+  const dispatch = useSearchDispatchContext();
+  // const { startDate, endDate } = state;
 
   return (
     <>
@@ -14,6 +21,7 @@ export const Calendar = () => {
         id={"calendar"}
         dateFormat="EEE, MMM dd"
         selectsRange={true}
+        onKeyDown={(event) => event.preventDefault()}
         startDate={startDate}
         endDate={endDate}
         onChange={(update) => {
@@ -24,4 +32,4 @@ export const Calendar = () => {
       />
     </>
   );
-};
+});

@@ -4,10 +4,11 @@ import "./AvailableHotels.css";
 
 import { Wrapper } from "../Wrapper";
 import { Heading } from "../Heading";
-import { useSearchContext } from "../../contexts/SearchContext";
+import {useSearchContext, useSearchStateContext} from "../../contexts/SearchStateContext";
 
 export const AvailableHotels = () => {
-  const { state } = useSearchContext();
+  // const { state } = useSearchContext();
+  const state = useSearchStateContext()
 
   const { hotelsList } = state;
 

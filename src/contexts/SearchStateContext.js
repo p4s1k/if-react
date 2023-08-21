@@ -75,16 +75,21 @@ const initialState = {
   endDate: null,
 };
 
-export const SearchContext = createContext(null);
+export const SearchDispatchContext = createContext(null);
+export const SearchStateContext = createContext(null);
 
 export const SearchContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
-    <SearchContext.Provider value={{ state, dispatch }}>
-      {children}
-    </SearchContext.Provider>
+    <SearchDispatchContext.Provider value={dispatch}>
+      <SearchStateContext.Provider value={state}>
+        {children}
+      </SearchStateContext.Provider>
+    </SearchDispatchContext.Provider>
   );
 };
 
-export const useSearchContext = () => useContext(SearchContext);
+// export const useSearchContext = () => useContext(SearchStateContext);
+export const useSearchStateContext = () => useContext(SearchStateContext);
+export const useSearchDispatchContext = () => useContext(SearchDispatchContext);

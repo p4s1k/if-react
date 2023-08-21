@@ -1,9 +1,16 @@
 import React from "react";
 import DatePicker from "react-datepicker";
-import { useSearchContext } from "../../contexts/SearchContext";
+import {
+  useSearchContext,
+  useSearchDispatchContext,
+  useSearchStateContext,
+} from "../../contexts/SearchStateContext";
 
 export const MobileCalendar = ({ id }) => {
-  const { state, dispatch } = useSearchContext();
+  // const { state, dispatch } = useSearchContext();
+  const dispatch = useSearchDispatchContext();
+  const state = useSearchStateContext();
+
   const { startDate, endDate } = state;
 
   return (

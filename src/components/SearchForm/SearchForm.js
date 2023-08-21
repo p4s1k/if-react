@@ -4,12 +4,18 @@ import { search } from "../../services/search";
 import "./SearchForm.css";
 import { Calendar } from "../Calendar";
 import { FilterForm } from "../FilterForm";
-import { useSearchContext } from "../../contexts/SearchContext";
-import {MobileCalendar} from "../MobileCalendar";
+import {
+  SearchContextProvider,
+  SearchStateContext,
+  useSearchDispatchContext,
+  useSearchStateContext,
+} from "../../contexts/SearchStateContext";
+import { MobileCalendar } from "../MobileCalendar";
 
 const SearchForm = () => {
   const [inputValue, setInputValue] = useState("");
-  const { dispatch } = useSearchContext();
+  const { dispatch } = useSearchDispatchContext();
+  const { startDate, endDate } = useSearchStateContext();
 
   const searchHotels = async (event) => {
     if (event.type === "keydown") {
@@ -53,10 +59,10 @@ const SearchForm = () => {
             />
           </div>
         </div>
-        <div className= "search-form__item-date-container">
+        <div className="search-form__item-date-container">
           <label htmlFor="calendar">Check-in — Check-out</label>
           <div className="input-block__date input-block">
-            <Calendar />
+            <Calendar startDate={startDate} endDate={endDate} />
           </div>
           <div className="search-form__check-date_mobile">
             <label htmlFor="startDate">Check-in date</label>

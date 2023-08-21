@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./FilterFormCounter.css";
-import { useSearchContext } from "../../contexts/SearchContext";
+import { useSearchContext } from "../../contexts/SearchStateContext";
 
 export const FilterFormCounter = ({ counter }) => {
   const { state } = useSearchContext();
