@@ -1,14 +1,10 @@
 import React, { memo } from "react";
 
 import "./FilterFormCounter.css";
-import {
-  useSearchStateContext,
-} from "../../contexts/SearchStateContext";
+import { useSearchDispatchContext } from "../../contexts/SearchStateContext";
 
-export const FilterFormCounter = memo(({ counter }) => {
-  const state = useSearchStateContext();
-
-  const { name, min, max } = counter;
+export const FilterFormCounter = memo(({ name, min, max, count }) => {
+  const dispatch = useSearchDispatchContext();
 
   return (
     <div className="item-filter__counter" key="${counterKey}">
@@ -19,8 +15,8 @@ export const FilterFormCounter = memo(({ counter }) => {
         <button
           className="counter__button counter__button_minus counter__button_disabled"
           type="button"
-          disabled={state[`count${name}`] === min}
-          onClick={() => counter.decrement()}
+          disabled={count === min}
+          onClick={() => dispatch({ type: `decrement${name}` })}
         >
           -
         </button>
@@ -28,13 +24,13 @@ export const FilterFormCounter = memo(({ counter }) => {
           className="item-filter__input"
           type="text"
           readOnly="readonly"
-          value={state[`count${name}`]}
+          value={count}
         />
         <button
           className="counter__button counter__button_plus"
           type="button"
-          disabled={state[`count${name}`] === max}
-          onClick={() => counter.increment()}
+          disabled={count === max}
+          onClick={() => dispatch({ type: `increment${name}` })}
         >
           +
         </button>

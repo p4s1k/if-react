@@ -216,7 +216,7 @@ button {
     margin-right: 8px;
   }
 
-  .search-form__item-date-container {
+  .container.search-form__item-date-container {
     min-width: initial;
     flex-grow: initial;
     margin: 4px;

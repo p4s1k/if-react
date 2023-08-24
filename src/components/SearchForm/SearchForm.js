@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { search } from "../../services/search";
+import React, { useMemo, useState } from "react";
 
 import "./SearchForm.css";
 import { Calendar } from "../Calendar";
@@ -9,12 +8,13 @@ import {
   useSearchStateContext,
 } from "../../contexts/SearchStateContext";
 import { MobileCalendar } from "../MobileCalendar";
+import { search } from "../../services/search";
 
 const SearchForm = () => {
-  const [inputValue, setInputValue] = useState("");
+  const state = useSearchStateContext();
 
+  const [inputValue, setInputValue] = useState("");
   const dispatch = useSearchDispatchContext();
-  const { startDate, endDate } = useSearchStateContext();
 
   const searchHotels = async (event) => {
     if (event.type === "keydown") {
@@ -38,6 +38,35 @@ const SearchForm = () => {
     setInputValue("");
   };
 
+  const {
+    startDate,
+    endDate,
+    countAdults,
+    countChildren,
+    countRooms,
+    childrenAge,
+  } = state;
+
+  const { adultsCounter, childrenCounter, roomsCounter } = useMemo(() => {
+    return {
+      adultsCounter: {
+        name: "Adults",
+        min: 1,
+        max: 30,
+      },
+      childrenCounter: {
+        name: "Children",
+        min: 0,
+        max: 10,
+      },
+      roomsCounter: {
+        name: "Rooms",
+        min: 1,
+        max: 30,
+      },
+    };
+  }, []);
+
   return (
     <div className="container top-selection__search-block-container">
       <form className="search-form" action="./" method="get">
@@ -58,21 +87,37 @@ const SearchForm = () => {
             />
           </div>
         </div>
-        <div className="search-form__item-date-container">
+        <div className="search-form__item-date-container container">
           <label htmlFor="calendar">Check-in — Check-out</label>
           <div className="input-block__date input-block">
             <Calendar startDate={startDate} endDate={endDate} />
           </div>
           <div className="search-form__check-date_mobile">
             <label htmlFor="startDate">Check-in date</label>
-            <MobileCalendar id={"startDate"} />
+            <MobileCalendar
+              id={"startDate"}
+              startDate={startDate}
+              endDate={endDate}
+            />
           </div>
           <div className="search-form__check-date_mobile">
             <label htmlFor="endDate">Check-out date</label>
-            <MobileCalendar id={"endDate"} />
+            <MobileCalendar
+              id={"endDate"}
+              startDate={startDate}
+              endDate={endDate}
+            />
           </div>
         </div>
-        <FilterForm />
+        <FilterForm
+          adultsCounter={adultsCounter}
+          childrenCounter={childrenCounter}
+          roomsCounter={roomsCounter}
+          childrenAge={childrenAge}
+          countAdults={countAdults}
+          countChildren={countChildren}
+          countRooms={countRooms}
+        />
         <div className="input-block_button input-block">
           <button
             className="search-form__item-button"

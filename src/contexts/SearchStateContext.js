@@ -90,6 +90,5 @@ export const SearchContextProvider = ({ children }) => {
   );
 };
 
-// export const useSearchContext = () => useContext(SearchStateContext);
 export const useSearchStateContext = () => useContext(SearchStateContext);
 export const useSearchDispatchContext = () => useContext(SearchDispatchContext);

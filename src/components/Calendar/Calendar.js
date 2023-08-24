@@ -5,7 +5,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { useSearchDispatchContext } from "../../contexts/SearchStateContext";
 
 export const Calendar = memo(({ startDate, endDate }) => {
-  console.log("rend cal");
+
   const dispatch = useSearchDispatchContext();
 
   return (

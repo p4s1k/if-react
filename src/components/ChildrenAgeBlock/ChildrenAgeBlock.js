@@ -1,14 +1,8 @@
 import React, { memo } from "react";
-import {
-  useSearchContext,
-  useSearchDispatchContext,
-  useSearchStateContext,
-} from "../../contexts/SearchStateContext";
+import { useSearchDispatchContext } from "../../contexts/SearchStateContext";
 
-export const ChildrenAgeBlock = memo( ({childrenAge}) => {
-  // const state = useSearchStateContext();
+export const ChildrenAgeBlock = memo(({ childrenAge }) => {
   const dispatch = useSearchDispatchContext();
-  console.log("rend child")
 
   const options = [];
 
