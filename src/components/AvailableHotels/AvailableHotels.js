@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 import "./AvailableHotels.css";
 
@@ -8,15 +8,19 @@ import { useSearchStateContext } from "../../contexts/SearchStateContext";
 
 export const AvailableHotels = () => {
   const state = useSearchStateContext();
+  const ref = useRef(null);
 
   const { hotelsList } = state;
 
   if (!hotelsList) {
     return;
   }
+
+  useEffect(() => ref.current?.scrollIntoView({ behavior: "smooth" }));
+
   if (hotelsList.length !== 0) {
     return (
-      <section className="available">
+      <section className="available" ref={ref}>
         <Wrapper>
           <Heading>Available Hotels</Heading>
           <div className="cards-row available__cards-row">
