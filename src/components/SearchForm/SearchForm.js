@@ -4,7 +4,7 @@ import "./SearchForm.css";
 import { Calendar } from "../Calendar";
 import { FilterForm } from "../FilterForm";
 import {
-  useSearchDispatchContext,
+  useSearchUpdateResultContext,
   useSearchStateContext,
 } from "../../contexts/SearchStateContext";
 import { MobileCalendar } from "../MobileCalendar";
@@ -14,7 +14,7 @@ const SearchForm = () => {
   const state = useSearchStateContext();
 
   const [inputValue, setInputValue] = useState("");
-  const dispatch = useSearchDispatchContext();
+  const setHotelsList = useSearchUpdateResultContext();
 
   const searchHotels = async (event) => {
     if (event.type === "keydown") {
@@ -30,7 +30,7 @@ const SearchForm = () => {
         alert("NOTHING FOUND");
       }
 
-      dispatch({ type: "hotelsList", searchHotelsResult: searchResult });
+      setHotelsList(searchResult);
     } else {
       alert("EMPTY VALUE");
     }

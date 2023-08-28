@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useReducer } from "react";
+import React, { createContext, useContext, useReducer, useState } from "react";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -70,21 +70,29 @@ const initialState = {
   countChildren: 0,
   countRooms: 1,
   childrenAge: [],
-  hotelsList: [],
   startDate: null,
   endDate: null,
 };
 
+const searchInitialState = [];
+
 export const SearchDispatchContext = createContext(null);
 export const SearchStateContext = createContext(null);
+export const SearchResultContext = createContext(null);
+export const SearchUpdateResultContext = createContext(null);
 
 export const SearchContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
+  const [hotelsList, setHotelsList] = useState(searchInitialState);
 
   return (
     <SearchDispatchContext.Provider value={dispatch}>
       <SearchStateContext.Provider value={state}>
-        {children}
+        <SearchResultContext.Provider value={hotelsList}>
+          <SearchUpdateResultContext.Provider value={setHotelsList}>
+            {children}
+          </SearchUpdateResultContext.Provider>
+        </SearchResultContext.Provider>
       </SearchStateContext.Provider>
     </SearchDispatchContext.Provider>
   );
@@ -92,3 +100,6 @@ export const SearchContextProvider = ({ children }) => {
 
 export const useSearchStateContext = () => useContext(SearchStateContext);
 export const useSearchDispatchContext = () => useContext(SearchDispatchContext);
+export const useSearchResultContext = () => useContext(SearchResultContext);
+export const useSearchUpdateResultContext = () =>
+  useContext(SearchUpdateResultContext);

@@ -1,16 +1,15 @@
-import React, { useEffect, useRef } from "react";
+import React, { memo, useEffect, useRef } from "react";
 
 import "./AvailableHotels.css";
 
 import { Wrapper } from "../Wrapper";
 import { Heading } from "../Heading";
-import { useSearchStateContext } from "../../contexts/SearchStateContext";
+import { useSearchResultContext } from "../../contexts/SearchStateContext";
 
-export const AvailableHotels = () => {
-  const state = useSearchStateContext();
+export const AvailableHotels = memo(() => {
   const ref = useRef(null);
 
-  const { hotelsList } = state;
+  const hotelsList = useSearchResultContext();
 
   if (!hotelsList) {
     return;
@@ -42,4 +41,4 @@ export const AvailableHotels = () => {
       </section>
     );
   }
-};
+});
